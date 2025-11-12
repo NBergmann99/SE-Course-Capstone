@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/nav.ejs') %>
+    <div class="create-drawing content">
+        <form action="/drawings" method="POST">
+            <label for="title">Part number</label>
+            <input type="text" id="title" name="title" required>
+            <label for="rpm">Max input RPM</label>
+            <input type="text" id="rpm" name="rpm" required>
+            <label for="ratio">Ratio</label>
+            <input type="text" id="ratio" name="ratio" required>
+            <label for="torque">Torque at output</label>
+            <input type="text" id="torque" name="torque" required>
+            <label for="axis">Axis orientation</label>
+            <input type="text" id="axis" name="axis" required>
+            <label for="imageUrl">Image URL</label>
+            <input type="text" id="imageUrl" name="imageUrl" required>
+            <label for="body">Description:</label>
+            <textarea id="body" name="body" required></textarea>
+            <button>Submit</button>
+        </form>
+    </div>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

@@ -1,0 +1,71 @@
+rpm<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+
+<body>
+    <%- include('../partials/nav.ejs') %>
+
+
+
+    <div class="details content">
+        <h2>Part number: <%= drawing.title %></h2>
+
+        <div class="content">
+            <p>Description: <%= drawing.body %></p>
+        </div>
+        <div class="rpm content">
+            <p>Max input RPM: <%= drawing.rpm %></p>
+        </div>
+        <div class="ratio content">
+            <p>Ratio: <%= drawing.ratio %></p>
+        </div>
+        <div class="torque content">
+            <p>Torque at output: <%= drawing.torque %></p>
+        </div>
+        <div class="axis content">
+            <p>Axis orientation: <%= drawing.axis %></p>
+        </div>
+        <div class="imageUrl content">
+            <div><img src="<%= drawing.imageUrl %>"/></div>
+        </div>
+        <div class="popup-image">
+            <span>&times;</span>
+            <img src="<%= drawing.imageUrl %>"/>
+        </div>
+        <script>
+            document.querySelectorAll('img').forEach(image => {
+                image.onclick = () => {
+                    document.querySelector('.popup-image').style.display = 'block';
+                    document.querySelector('.popup-image img').src = image.getAttribute('src')
+                }
+            });
+
+            document.querySelector('.popup-image span').onclick = () => {
+                document.querySelector('.popup-image').style.display = 'none';
+            }
+        </script>
+
+        <a class="delete" data-doc="<%= drawing._id %>">
+            <img src="/trashcan.svg" alt="delete icon">
+        </a>
+    </div>
+
+    <%- include('../partials/footer.ejs') %>
+
+    <script>
+        const trashcan = document.querySelector('a.delete');
+
+        trashcan.addEventListener('click', (e) => {
+            const endpoint = `/drawings/${trashcan.dataset.doc}`;
+
+            fetch(endpoint, {
+                method: 'DELETE'
+            })
+            .then((response) => response.json())
+            .then((data) => window.location.href = data.redirect)
+            .catch(err => console.log(err));
+        })
+    </script>
+
+</body>
+</html>

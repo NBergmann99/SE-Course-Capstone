@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+    
+.banner{
+  width: 1vw;
+  display: block;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background-image: url('/db_photo.jpg');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: auto;
+  font-family: 'Noto Serif', serif;
+  background-color: black;
+}
+p, h2, h3, a, ul{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: black;
+}
+p{
+  margin-left: 40px;
+  margin-right: 60px;
+  color: white;
+  text-shadow: 0.1px 0.1px cyan;
+}
+.about-title{
+  color: white;
+}
+nav{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  padding-bottom: 10px;
+  border-width: 10px;
+  border-style: solid;
+  border-image-source: linear-gradient(hsl(175 100% 50% / 0.3), hsla(0, 0%, 0%, 0.3));
+  border-image-slice: fill 1;
+  border-bottom: 1px solid #ddd;
+  text-transform: uppercase;
+}
+nav ul{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding-right: 15px;
+  color: cyan;
+}
+nav li{
+  list-style-type: none;
+  margin: 0 10px;
+  font-size: 0.85em;
+}
+nav h1{
+  font-size: 3em;
+}
+nav p, nav a{
+  color: cyan;
+  font-weight: 300;
+}
+footer{
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin: 380px auto 20px;
+  /* position: absolute; */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; 
+}
+h2{
+  margin-bottom: 40px;
+  margin-left: 20px;
+}
+h3{
+  text-transform: capitalize;
+  margin-top: 0;
+}
+.site-title h1{
+  margin-bottom: 0;
+  width: 150%;
+}
+.site-title .slogan{
+  color: white;
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+  margin-left: 10px;
+}
+.content{
+  margin: 20px;
+}
+.drawings a{
+  display: block;
+  margin: 40px 0;
+  padding-left: 30px;
+  border-left: 8px solid cyan;
+}
+.drawings h3{
+  color: white;
+}
+.drawings a:hover h3{
+  color: cyan;
+}
+.single{
+  width: 60%;
+}
+.imageUrl img{
+  width: 600px;
+  margin-left: 40px;
+  position: absolute;
+  height: auto;
+  border: 1px solid cyan;
+}
+.imageUrl img:hover{
+  transform: scale(1.025);
+  border: 1px solid cyan;
+}
+.popup-image{
+  position: fixed;
+  top: 0; left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  display: none;
+}
+.popup-image span{
+  position: absolute;
+  top: 0; right: 10px;
+  font-size: 60px;
+  font-weight: bolder;
+  color: #fff;
+  cursor: pointer;
+  z-index: 100;
+}
+.popup-image img{
+  position: absolute;
+  top:50%; left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid #fff;
+  width: 750px;
+  object-fit: cover;
+}
+.details{
+  position: relative;
+}
+.details h2{
+  color: white;
+}
+.delete{
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  padding: 8px;
+  background-color: white;
+}
+.delete:hover{
+  cursor: pointer;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+}
+.create-drawing form{
+  max-width: 350px;
+  margin: 0 auto;
+}
+.create-drawing input,
+.create-drawing textarea{
+  display: block;
+  width: 93%;
+  margin: 10px 0;
+  padding: 8px;
+}
+.create-drawing label{
+  display: block;
+  margin-top: 24px;
+}
+textarea{
+  height: 120px;
+}
+.headings{
+  position: relative;
+  left: 40%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  width: 300px;
+}
+.headings h3{
+  margin-top: 20px;
+  color: white;
+  padding: 6px;
+  border: 0;
+  font-size: 1em;
+  margin-bottom: 40px;
+  margin-left: 20px;
+}
+.headings h2{
+  margin-top: 20px;
+  color: white;
+  padding: 6px;
+  border: 0;
+  font-size: 2em;
+  margin-bottom: 40px;
+  margin-left: 20px;
+}
+form h2{
+  font-size: 2.4em;
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+form{
+  width: 350px;
+  margin: 0 auto;
+  padding: 30px;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  background: white;
+}
+input{
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  width: 92%;
+}
+label{
+  display: block;
+  margin: 10px 0 10px;
+}
+button{
+  margin-top: 30px;
+  border-radius: 36px;
+  background: cyan;
+  border:0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8em;
+  display: block;
+  padding: 10px 16px;
+  letter-spacing: 2px;
+}
+.error{
+  color: #ff0099;
+  margin: 10px 2px;
+  font-size: 0.8em;
+  font-weight: bold;
+}

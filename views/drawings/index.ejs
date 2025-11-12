@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+<body>
+
+    <%- include('../partials/nav.ejs') %>
+
+    <div class="drawings content">
+        <h2>All drawings</h2>
+
+        <% if (drawings.length > 0) { %>
+            <% drawings.forEach(drawing => { %>
+                <a class="single" href="/drawings/<%= drawing._id %>">
+                <h3 class="title"><%= drawing.title %></h3>
+                <p class="body"><%= drawing.body %></p>
+                </a>
+            <% }) %>
+        <% } else { %>
+            <p>There are no drawings to display</p>
+            <% } %>
+
+    </div>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>
